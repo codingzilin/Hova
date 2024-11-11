@@ -1,1 +1,2 @@
 # Hova
+npm run ios
