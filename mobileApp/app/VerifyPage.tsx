@@ -8,18 +8,14 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import { router, Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { TamaguiProvider, Theme } from "tamagui";
 import tamaguiConfig from "@/tamagui.config";
-import { PhoneInput } from "@/components/phoneInput";
+import { VerifyCodeInput } from "@/components/verifyCodeInput";
 
 const { width } = Dimensions.get("window");
 
-const PhoneNumberEntry: React.FC = () => {
-  const handleContinue = () => {
-    router.push("/VerifyPage");
-  };
-
+const VerifyPage: React.FC = () => {
   return (
     <TamaguiProvider config={tamaguiConfig}>
       <View style={styles.root}>
@@ -31,20 +27,18 @@ const PhoneNumberEntry: React.FC = () => {
           </Theme>
 
           <View style={styles.headerSection}>
-            <Text style={styles.title}>Enter your phone number</Text>
+            <Text style={styles.title}>Verify your phone number</Text>
             <Text style={styles.subtitle}>
-              You will receive a code to confirm your identity.
+              Please check your phone for the confirmation code we sent.
             </Text>
           </View>
 
-          <View style={styles.phoneInputSection}>
-            <Theme name='light'>
-              <PhoneInput />
-            </Theme>
+          <View style={styles.inputSection}>
+            <VerifyCodeInput />
           </View>
 
           <View style={styles.buttonSection}>
-            <TouchableOpacity style={styles.button} onPress={handleContinue}>
+            <TouchableOpacity style={styles.button}>
               <Text style={styles.buttonText}>Continue</Text>
             </TouchableOpacity>
           </View>
@@ -54,7 +48,7 @@ const PhoneNumberEntry: React.FC = () => {
   );
 };
 
-export default PhoneNumberEntry;
+export default VerifyPage;
 
 const styles = StyleSheet.create({
   root: {
@@ -84,8 +78,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     gap: 15,
   },
-  phoneInputSection: {
-    paddingTop: 100,
+  inputSection: {
+    paddingTop: 40,
   },
   button: {
     backgroundColor: "#0162F1",

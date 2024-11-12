@@ -42,7 +42,7 @@ const config = createTamagui({
     light: {
       ...themes.light,
       background: "#ffffff",
-      color: "#ffffff",
+      color: "#00000",
     },
   },
   tokens,
