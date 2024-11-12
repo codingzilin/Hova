@@ -7,7 +7,7 @@ export default function Index() {
 
   return (
     <View style={styles.root}>
-      <StatusBar barStyle='light-content' backgroundColor='#0066FF' />
+      <StatusBar barStyle='light-content' backgroundColor='#0162F1' />
       <View style={styles.container}>
         <View style={[styles.logoSection, { height: screenHeight * 0.4 }]}>
           <Image
@@ -27,7 +27,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "#0066FF",
+    backgroundColor: "#0162F1",
   },
   container: {
     flex: 1,
